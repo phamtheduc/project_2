@@ -1,0 +1,48 @@
+{
+    "name": "connect-db",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "binh",
+    "license": "MIT",
+    "scripts": {
+      "build": "npx tsc",
+      "dev": "nodemon src/index.ts",
+      "test": "set ENV=test && yarn migration:run && yarn build && yarn jasmine",
+      "typeorm": "typeorm-ts-node-commonjs",
+      "migration:run": "yarn build && yarn typeorm migration:run -- -d dist/data-source.js",
+      "migration:revert": "yarn build && yarn typeorm migration:revert -- -d dist/data-source.js",
+      "migration:create-user": "typeorm migration:create src/migrations/userMigration",
+      "migration:create-product": "typeorm migration:create src/migrations/productMigration",
+      "migration:create-order": "typeorm migration:create src/migrations/orderMigration",
+      "migration:create-order-product": "typeorm migration:create src/migrations/orderProductMigration"
+    },
+    "devDependencies": {
+      "@types/bcrypt": "^5.0.0",
+      "@types/body-parser": "^1.19.2",
+      "@types/cors": "^2.8.13",
+      "@types/express": "^4.17.17",
+      "@types/jasmine": "^4.3.1",
+      "@types/jsonwebtoken": "^9.0.1",
+      "@types/node": "^18.15.13",
+      "@types/supertest": "^2.0.12",
+      "@types/uuid": "^9.0.1",
+      "nodemon": "^2.0.22",
+      "ts-node": "^10.9.1",
+      "typescript": "^5.0.4"
+    },
+    "dependencies": {
+      "bcrypt": "^5.1.0",
+      "body-parser": "^1.20.2",
+      "cors": "^2.8.5",
+      "dotenv": "^16.0.3",
+      "express": "^4.18.2",
+      "jasmine": "^4.6.0",
+      "jasmine-spec-reporter": "^7.0.0",
+      "jsonwebtoken": "^9.0.0",
+      "pg": "^8.10.0",
+      "supertest": "^6.3.3",
+      "typeorm": "^0.3.15",
+      "uuid": "^9.0.0"
+    }
+  }
+  

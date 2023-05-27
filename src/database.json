@@ -1,0 +1,16 @@
+{
+    "dev": {
+      "driver": "pg",
+      "host": "127.0.0.1",
+      "database": "postgres",
+      "user": "postgres",
+      "password": "binh"
+    },
+    "test": {
+      "driver": "pg",
+      "host": "127.0.0.1",
+      "database": "fantasy_worlds",
+      "user": "postgres",
+      "password": "binh"
+    }
+  }
