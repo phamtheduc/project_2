@@ -11,6 +11,7 @@ const getProducts = async (req: Request, res: Response, next: NextFunction) => {
     throw new Error((error as { message: string }).message);
   }
 };
+
 const getOneProduct = async (
   req: Request,
   res: Response,
@@ -25,6 +26,7 @@ const getOneProduct = async (
     throw new Error((error as { message: string }).message);
   }
 };
+
 const addProduct = async (req: Request, res: Response, next: NextFunction) => {
   const userRepository = AppDataSource.getRepository(Product);
   try {
@@ -52,6 +54,7 @@ const getTop5Product = async (
     throw new Error((error as { message: string }).message);
   }
 };
+
 const filterProductByCategory = async (
   req: Request,
   res: Response,
